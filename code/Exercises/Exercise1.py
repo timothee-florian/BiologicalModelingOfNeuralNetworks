@@ -22,14 +22,14 @@ for k in range(K): # Number of iterations
     for p in P:
         # Create P patterns
         hn.make_pattern(P=p,ratio=ratio)
-        print 'ITERATION:', k+1,'/',K
-        print 'NUMBER OF PATTERNS', p
+        print('ITERATION:', k+1,'/',K)
+        print('NUMBER OF PATTERNS', p)
         weight_mem = [] # Storage of the weight matrix over Z*c updates. This is only used to analyse the impact of modifying the diagonal of the weights matrix, mentionned in the appendix of the report
         distance_mem = [] # Storage of the Hamming distance at each recall. This is only used to analyse the impact of modifying the diagonal of the weights matrix, mentionned in the appendix of the report
 
         for z in range(Z):
             if FLAG_progress and z%(Z/10) == 0:
-                print 100.0*z/Z, '%'
+                print(100.0*z/Z, '%')
                 loading = 0
             weight_mem.append(hn.weight)
             if rand.randint(0,1000)/1000.0 < P_s: # Storage
@@ -40,9 +40,9 @@ for k in range(K): # Number of iterations
                 hn.recall(mu=rand.randint(0,hn.count_patterns()-1), P_f=P_f,decay=decay)
                 distance_mem.append([z,hn.distance])
         
-        print 'RECALLS:', hn.recalls
-        print 'ERROR AVERAGE;', 100.0*hn.distance_sum/hn.recalls, '%'
-        print 'SUCESS RATE:', 100.0*hn.recognition_success/hn.recalls, '%'
+        print('RECALLS:', hn.recalls)
+        print('ERROR AVERAGE;', 100.0*hn.distance_sum/hn.recalls, '%')
+        print('SUCESS RATE:', 100.0*hn.recognition_success/hn.recalls, '%')
         
         # Results storage
         Results_P_errors[k][P_n][0] = p
@@ -55,7 +55,7 @@ for k in range(K): # Number of iterations
         # hn.plot_error_rate(P=P,error_rate=P_errors,K=K)
         
         P_n += 1
-        print # Next line
+        print() # Next line
 
 # Statistics
 Mean_P_error = np.mean(P_errors, axis=0)
