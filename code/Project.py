@@ -1,10 +1,10 @@
 import hopfield 
-reload(hopfield)
+# reload(hopfield)
 # import multiprocessing
 import random as rand
 import numpy as np
 import matplotlib.pyplot as plt
-import pylab as pl
+# import pylab as pl
 import time
 
 FLAG_progress = False # Show process progress (True or False)

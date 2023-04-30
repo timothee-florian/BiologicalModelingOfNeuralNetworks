@@ -1,7 +1,7 @@
-import Image
+# import Image
 from copy import copy
 from time import sleep
-from pylab import *
+# from pylab import *
 import random as rand
 
 class hopfield_network:
@@ -174,7 +174,7 @@ class hopfield_network:
         try:
             self.pattern[mu]
         except:
-            raise IndexError, 'pattern index too high'
+            raise IndexError('pattern index too high')
         
         # set the initial state of the net
         self.noise_pattern(mu=mu,P_f=P_f)
