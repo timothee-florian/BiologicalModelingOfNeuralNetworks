@@ -10,7 +10,7 @@ N_n = 0 # Counter for number of sizes tested
 
 for n in N:
     
-    print 'Number of fully interconnected units:', n
+    print('Number of fully interconnected units:', n)
     
     # Initialisation of parameters for size n
     error = 0
@@ -25,10 +25,10 @@ for n in N:
     # Search for maximum dictionary size for n dimensions
     while not found:
         hn.make_pattern(P=p,ratio=ratio)
-        print 'Testing for', p, 'patterns with Pmin =',previous_min, 'and Pmax =',previous_max
+        print('Testing for', p, 'patterns with Pmin =',previous_min, 'and Pmax =',previous_max)
         for z in range(Z):
             if FLAG_progress and z%(Z/10) == 0:
-                print '\r', 100.0*z/Z, '%\r'
+                print('\r', 100.0*z/Z, '%\r')
                 loading = 0
             if rand.randint(0,1000)/1000.0 < P_s: # Storage
                 mu = rand.randint(0,hn.count_patterns()-1)
@@ -52,7 +52,7 @@ for n in N:
                     found = True # Found maximum dictionary size
 
         elif distance_mean > error_max: # Smaller dictionary size required
-            print 'Maximum error crossed for', p, 'patterns'
+            print('Maximum error crossed for', p, 'patterns')
             previous_max = p
             p = (previous_min+p)/2
             if p == previous_min:
@@ -61,7 +61,7 @@ for n in N:
     # Results storage
     Results_N_Pmax[N_n][0] = n
     Results_N_Pmax[N_n][1] = p
-    print 'RESULT:\nFor patterns with', n, 'dimensions:\nMaximum dictionaray size is', p, 'patterns\n'
+    print('RESULT:\nFor patterns with', n, 'dimensions:\nMaximum dictionaray size is', p, 'patterns\n')
     N_n += 1
 
 # Plot of the maximum dictionary size in function the dimension N of patterns
