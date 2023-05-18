@@ -4,8 +4,7 @@ import hopfield
 import random as rand
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib as mpl
-mpl.rcParams.update(mpl.rcParamsDefault)
+
 # import pylab as pl
 import time
 import os
@@ -81,7 +80,7 @@ P_f = 0.1 # ratio of flipped pixels
 error_max = 0.05
 P_init = 27
 
-with open(os.path.join('"Exercises', 'Exercise2.py'), 'r') as f:
+with open(os.path.join('Exercises', 'Exercise2.py'), 'r') as f:
     exec(f.read())
 
 # -------------------------------------
@@ -115,7 +114,7 @@ P_f = 0.1 # ratio of flipped pixels
 T_window = 20
 m = 5
 
-with open(os.path.join('"Exercises', 'Exercise3.py'), 'r') as f:
+with open(os.path.join('Exercises', 'Exercise3.py'), 'r') as f:
     exec(f.read())
 
 # -------------------------------------
@@ -134,7 +133,7 @@ p = 100 # Total number of patterns that will be stored
 ratio = 0.5 # probability of a pixel being 1 instead of -1
 
 # Updates
-Decay = range(0,1000+1,1) # Decay multiplied by resolution
+Decay = [i for i in range(0,1000+1,1)] # Decay multiplied by resolution
 resolution = 0.001 # Multiplied to the values of Decay
 
 # Steps
@@ -147,9 +146,9 @@ P_f = 0.1 # ratio of flipped pixels
 
 # Exercise parameters
 T_window = 20
-M = range(2,15+1,1)
+M = [i for i in range(2,15+1,1)]
 
-with open(os.path.join('"Exercises', 'Exercise4.py'), 'r') as f:
+with open(os.path.join('Exercises', 'Exercise4.py'), 'r') as f:
     exec(f.read())
 
 # -------------------------------------
