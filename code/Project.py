@@ -4,6 +4,8 @@ import hopfield
 import random as rand
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
 # import pylab as pl
 import time
 import os
@@ -33,7 +35,7 @@ K = 100 # Number of times the algorithm is run for cross-validations
 N = 100 # size of the network, i.e. if N=10 it will consists of 10x10 pixels
 
 # Random patterns
-P = range(1,30+1,1) # Total number of patterns that will be stored
+P = range(1, 30+1, 1) # Total number of patterns that will be stored
 ratio = 0.5 # probability of a pixel being 1 instead of -1
 
 # Updates
@@ -47,7 +49,7 @@ c = 5
 P_s = 0.8 # Probability ps for storage
 P_f = 0.1 # ratio of flipped pixels
 
-with open(os.path.join('"Exercises', 'Exercise1.py'), 'r') as f:
+with open(os.path.join('Exercises', 'Exercise1.py'), 'r') as f:
     exec(f.read())
 
 # -------------------------------------
