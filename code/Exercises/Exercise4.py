@@ -48,6 +48,10 @@ for m in M:
     
     decay_n = 0
     m_n += 1
+
+#reset matplotlib parameter
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
     
 # Heatmap of the error in function of the decay and the sub-dictionary size m
 Decay.append(Decay[-1]+Decay_jump)
