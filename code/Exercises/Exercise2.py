@@ -47,14 +47,14 @@ for n in N:
                 p = p*2
             elif previous_max > p:
                 previous_min = p
-                p = (previous_max+p)/2
+                p = (previous_max+p)//2
                 if p == previous_max-1:
                     found = True # Found maximum dictionary size
 
         elif distance_mean > error_max: # Smaller dictionary size required
             print('Maximum error crossed for', p, 'patterns')
             previous_max = p
-            p = (previous_min+p)/2
+            p = (previous_min+p)//2
             if p == previous_min:
                 found = True # Found maximum dictionary size
     
