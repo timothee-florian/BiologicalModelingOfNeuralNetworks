@@ -1,4 +1,4 @@
-# BiologicalModelingOfNeuralNetworks
+# Biological Modeling Of Neural Networks
 
 Implementation of an Hopfiled network that simulates the associative memory.
 
