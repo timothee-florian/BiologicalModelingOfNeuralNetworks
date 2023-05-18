@@ -6,6 +6,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # import pylab as pl
 import time
+import os
 
 FLAG_progress = False # Show process progress (True or False)
 FLAG_plot = False
@@ -46,7 +47,8 @@ c = 5
 P_s = 0.8 # Probability ps for storage
 P_f = 0.1 # ratio of flipped pixels
 
-execfile('Exercises/Exercise1.py')
+with open(os.path.join('"Exercises', 'Exercise1.py'), 'r') as f:
+    exec(f.read())
 
 # -------------------------------------
 # -------------------------------------
@@ -77,7 +79,8 @@ P_f = 0.1 # ratio of flipped pixels
 error_max = 0.05
 P_init = 27
 
-execfile('Exercises/Exercise2.py')
+with open(os.path.join('"Exercises', 'Exercise2.py'), 'r') as f:
+    exec(f.read())
 
 # -------------------------------------
 # -------------------------------------
@@ -110,7 +113,8 @@ P_f = 0.1 # ratio of flipped pixels
 T_window = 20
 m = 5
 
-execfile('Exercises/Exercise3.py')
+with open(os.path.join('"Exercises', 'Exercise3.py'), 'r') as f:
+    exec(f.read())
 
 # -------------------------------------
 # -------------------------------------
@@ -143,7 +147,8 @@ P_f = 0.1 # ratio of flipped pixels
 T_window = 20
 M = range(2,15+1,1)
 
-execfile('Exercises/Exercise4.py')
+with open(os.path.join('"Exercises', 'Exercise4.py'), 'r') as f:
+    exec(f.read())
 
 # -------------------------------------
 # -------------------------------------
