@@ -1,10 +1,10 @@
 import hopfield 
-reload(hopfield)
+# reload(hopfield)
 # import multiprocessing
 import random as rand
 import numpy as np
 import matplotlib.pyplot as plt
-import pylab as pl
+# import pylab as pl
 import time
 
 FLAG_progress = False # Show process progress (True or False)
@@ -23,7 +23,7 @@ start = time.time()
 
 # Exercise 1
 
-print '\nEXERCISE 1\n===========\n'
+print('\nEXERCISE 1\n===========\n')
 
 # Run
 K = 100 # Number of times the algorithm is run for cross-validations
@@ -54,7 +54,7 @@ execfile('Exercises/Exercise1.py')
 
 # Exercise 2
 
-print '\nEXERCISE 2\n===========\n'
+print('\nEXERCISE 2\n===========\n')
 
 # Network size
 N = range(100,1000+1,10) # size of the network, i.e. if N=10 it will consists of 10x10 pixels
@@ -85,7 +85,7 @@ execfile('Exercises/Exercise2.py')
 
 # Exercise 3
 
-print '\nEXERCISE 3\n===========\n'
+print('\nEXERCISE 3\n===========\n')
 
 # Network size
 N = 100 # size of the network, i.e. if N=10 it will consists of 10x10 pixels
@@ -118,7 +118,7 @@ execfile('Exercises/Exercise3.py')
 
 # Exercise 4
 
-print '\nEXERCISE 4\n===========\n'
+print('\nEXERCISE 4\n===========\n')
 
 # Network size
 N = 100 # size of the network, i.e. if N=10 it will consists of 10x10 pixels
@@ -150,4 +150,4 @@ execfile('Exercises/Exercise4.py')
 # -------------------------------------
 
 end = time.time()
-print 'Elapsed time:', end-start, 'seconds'
+print('Elapsed time:', end-start, 'seconds')

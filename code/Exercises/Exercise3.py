@@ -8,10 +8,10 @@
 Results_decay_errorrate = [[None,None] for i in range(len(Decay))]
 decay_n = 0 # Counter for number of decays tested
 
-print 'NUMBER OF PATTERNS', p, '\n'
+print('NUMBER OF PATTERNS', p, '\n')
 for decay in Decay:
     decay *= resolution
-    print 'DECAY',  decay
+    print('DECAY',  decay)
     
     hn = hopfield.hopfield_network(N=N,c=c,plot=FLAG_plot)
     hn.make_pattern(P=p,ratio=ratio)
@@ -21,7 +21,7 @@ for decay in Decay:
         window = [(i+xi_start)%p for i in range(m)]
         
         if FLAG_progress and z%(Z/10) == 0:
-            print 100.0*z/Z, '%'
+            print(100.0*z/Z, '%')
             loading = 0
         if rand.randint(0,1000)/1000.0 < P_s: # Strorage
             mu = window[rand.randint(0,m-1)]
@@ -30,9 +30,9 @@ for decay in Decay:
         else: # Recall
             hn.recall(mu=window[rand.randint(0,m-1)], P_f=P_f, decay=decay)
             
-    print 'RECALLS:', hn.recalls 
-    print 'ERRORS:', hn.distance_sum
-    print 'ERROR RATE;', 100.0*hn.distance_sum/hn.recalls, '%'
+    print('RECALLS:', hn.recalls )
+    print('ERRORS:', hn.distance_sum)
+    print('ERROR RATE;', 100.0*hn.distance_sum/hn.recalls, '%')
 
     # Storage
     Results_decay_errorrate[decay_n][0] = decay

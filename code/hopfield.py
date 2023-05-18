@@ -1,7 +1,8 @@
-import Image
+# import Image
 from copy import copy
 from time import sleep
-from pylab import *
+# from pylab import *
+import numpy as np
 import random as rand
 
 class hopfield_network:
@@ -32,7 +33,7 @@ class hopfield_network:
         ratio: probability of a pixel being 1 instead of -1
         """
 
-        self.pattern = -ones((P,self.N),int)
+        self.pattern = -np.ones((P,self.N),int)
         idx = int(ratio*self.N)
         for i in range(P):
             for j in range(self.N):
@@ -40,7 +41,7 @@ class hopfield_network:
                     self.pattern[i,j] = 1
                 
         
-        self.weight = zeros((self.N,self.N))
+        self.weight = np.zeros((self.N,self.N))
         self.distance_sum = 0
         self.recognition_success = 0
         self.recalls = 0
@@ -70,7 +71,7 @@ class hopfield_network:
         """
         
         self.x = copy(self.pattern[mu])
-        flip = permutation(arange(self.N))
+        flip = np.random.permutation(np.arange(self.N))
         idx = int(self.N*P_f)
         self.x[flip[0:idx]] *= -1
 
@@ -174,7 +175,7 @@ class hopfield_network:
         try:
             self.pattern[mu]
         except:
-            raise IndexError, 'pattern index too high'
+            raise IndexError('pattern index too high')
         
         # set the initial state of the net
         self.noise_pattern(mu=mu,P_f=P_f)
