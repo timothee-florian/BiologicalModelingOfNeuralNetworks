@@ -49,6 +49,10 @@ for i in range (len(Results_decay_errorrate)):
     plot_decay.append(Results_decay_errorrate[i][0])
     plot_error.append(Results_decay_errorrate[i][1])
 
+#reset matplotlib parameter
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
+
 plt.figure('Exercise 3')
 plt.title('Error in function of decay $\lambda$ for sub-dictionary size m = 5')
 plt.plot(plot_decay,plot_error,'-')

@@ -64,6 +64,10 @@ Mean_P_success = np.mean(P_success, axis=0)
 Std_P_success = np.std(P_success, axis=0)
 # ax0.errorbar(p, Mean_P_error, yerr=Std_P_error, fmt='-o')
 
+#reset matplotlib parameter
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
+
 # Plot of the Hamming distance for each iteration over the number of patterns
 plt.figure('Exercise 1 a Distance') # fig_error_rate = 
 plt.title('Recall error in function of number of patterns\nobtained from %i iterations'%K)

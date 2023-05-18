@@ -64,6 +64,10 @@ for n in N:
     print('RESULT:\nFor patterns with', n, 'dimensions:\nMaximum dictionaray size is', p, 'patterns\n')
     N_n += 1
 
+#reset matplotlib parameter
+import matplotlib as mpl
+mpl.rcParams.update(mpl.rcParamsDefault)
+
 # Plot of the maximum dictionary size in function the dimension N of patterns
 plt.figure('Exercise 2')
 plt.title('Maximum dictionary size in function of the number of dimensions\nfor a recall error below 0.05')
